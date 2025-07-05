@@ -12,7 +12,7 @@ import { CartProvider } from "./context/CartContext";
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename="/SmartSpecs">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
