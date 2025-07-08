@@ -36,7 +36,7 @@ const features = [
     icon: <ShieldCheck className="text-blue-900 w-6 h-6 mr-3 shrink-0" />,
     title: "7‑Day Guarantee + Fast Delivery",
     description:
-      "Try risk-free. Orders ship swiftly to your door across Nigeria.",
+      "Try risk-free. Orders ship swiftly to your door across the nation.",
   },
 ];
 

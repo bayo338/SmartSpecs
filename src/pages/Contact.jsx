@@ -44,14 +44,14 @@ const Contact = () => {
           </form>
 
           <div className="text-sm text-gray-600 pt-6 border-t border-gray-300">
-            <p>Email: <a href="mailto:info@smartspecs.ng" className="text-blue-700">info@smartspecs.ng</a></p>
-            <p>Phone: <a href="tel:+2348031234567" className="text-blue-700">+234 803 123 4567</a></p>
-            <p>Location: Lagos, Nigeria</p>
+            <p>Email: <a href="mailto:info@smartspecs.ng" className="text-blue-700">wade3@elizabeth-liz.com</a></p>
+            <p>Phone: <a href="tel:+2348031234567" className="text-blue-700">+1629-279-4356</a></p>
+            <p>Location: Ibadan, Nigeria</p>
           </div>
         </div>
 
         {/* Floating WhatsApp Button */}
-        <a
+        {/* <a
           href="https://wa.me/2348031234567"
           target="_blank"
           rel="noopener noreferrer"
@@ -63,7 +63,7 @@ const Contact = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M16.72 11.06a6 6 0 10-9.22 5.06l-1.05 3.05a1 1 0 001.27 1.27l3.05-1.05a6 6 0 005.95-8.33z" />
           </svg>
-        </a>
+        </a> */}
       </div>
     </section>
   );

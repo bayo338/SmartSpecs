@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../components/Footer';
+import logo from '../assets/svg.png';
 
 const About = () => {
   return (
@@ -21,19 +23,20 @@ const About = () => {
           </p>
 
           <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-            Built with love, powered by AI, and crafted for comfort — SmartSpecs is proudly made in Nigeria, and we're excited to share our vision with you.
+            Built with love, powered by AI, and crafted for comfort — SmartSpecs is proudly made for everyone, and we're excited to share our vision with you.
           </p>
         </div>
 
         <div className="mt-12 flex justify-center">
           <img
-            src="/logo.png"
+            src={logo}
             alt="SmartSpecs logo"
             className="h-16 md:h-20 object-contain"
           />
-        </div>
-      </div>
+        </div>        
+      </div>      
     </section>
+    
   );
 };
 

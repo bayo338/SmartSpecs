@@ -16,7 +16,7 @@ const ContactSection = () => {
         {/* Flex container for info + map */}
         <div className="flex flex-col md:flex-row gap-8">
           {/* Contact Info */}
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
             {/* Location */}
             <div className="flex items-start gap-4">
               <div className="p-3 bg-blue-100 text-blue-900 rounded-full shadow-md">
@@ -25,7 +25,7 @@ const ContactSection = () => {
               <div>
                 <h4 className="font-semibold text-lg mb-1">Our Office</h4>
                 <p className="text-gray-700 text-sm">
-                  123 Innovation Street, Lagos, Nigeria
+                  Plot 66/67 Babalola Estate, Orita Challenge, Odo-Ona Elewe, Ibadan, Oyo state, Nigeria
                 </p>
               </div>
             </div>
@@ -37,7 +37,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-1">Call Us</h4>
-                <p className="text-gray-700 text-sm">+234 803 123 4567</p>
+                <p className="text-gray-700 text-sm">+1629-279-4356</p>
                 <p className="text-gray-700 text-sm">Mon–Sat: 9am – 6pm</p>
               </div>
             </div>
@@ -56,7 +56,7 @@ const ContactSection = () => {
           </div>
 
           {/* Google Map */}
-          <div className="md:w-2/5">
+          <div className="md:w-3/5">
             <h3 className="text-xl font-semibold text-blue-900 mb-4">Find Us on the Map</h3>
             <div className="w-full h-72 md:h-full rounded-xl overflow-hidden shadow-lg border-4 border-blue-100">
               <iframe

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -9,11 +10,18 @@ const Footer = () => {
 
         {/* Branding + Brief */}
         <div>
-          <h3 className="text-2xl font-bold mb-3 text-white">SmartSpecs</h3>
+          <Link to="/" className="inline-block mb-3">
+            <img
+              src={logo} // Replace with your logo image path
+              alt="SmartSpecs Logo"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
           <p className="text-gray-300 text-sm">
             SmartSpecs brings AI to your vision. Stylish, intelligent glasses designed for everyday brilliance.
           </p>
         </div>
+
 
         {/* Quick Links */}
         <div>
@@ -31,7 +39,7 @@ const Footer = () => {
         {/* Contact & Socials */}
         <div>
           <h4 className="font-semibold text-lg mb-3 text-white">Contact</h4>
-          <p className="text-gray-300 text-sm mb-2">📍 Lagos, Nigeria</p>
+          <p className="text-gray-300 text-sm mb-2">📍 Oyo, Nigeria</p>
           <p className="text-gray-300 text-sm mb-4">📧 wade3@elizabeth-liz.com</p>
           <div className="flex space-x-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">

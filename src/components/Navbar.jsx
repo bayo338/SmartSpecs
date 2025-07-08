@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { ShoppingCart } from 'lucide-react';
+import {
+  ShoppingCart,
+  Home,
+  Info,
+  Phone,
+  X,
+  Menu
+} from 'lucide-react'; // Icons used for nav links
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
@@ -9,28 +16,25 @@ const Navbar = () => {
   const { cart } = useCart();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Order', path: '/order' },
+    { name: 'Home', path: '/', icon: <Home size={18} /> },
+    { name: 'About Us', path: '/about', icon: <Info size={18} /> },
+    { name: 'Contact', path: '/contact', icon: <Phone size={18} /> },
+    { name: 'Order', path: '/order', icon: <ShoppingCart size={18} /> },
   ];
 
   return (
     <header className="bg-[#0a1a3c] text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* LOGO SECTION */}
-        <Link to="/" className="flex items-center space-x-2">
+        {/* Logo */}
+        <Link to="/">
           <img
-            src={logo} //  Replace with your actual logo path
+            src={logo}
             alt="SmartSpecs Logo"
-            className="w-8 h-8 md:w-10 md:h-10 object-contain"
+            className="h-10 w-auto max-w-[120px] object-contain"
           />
-          <span className="text-xl md:text-2xl font-bold tracking-tight text-white">
-            SmartSpecs
-          </span>
         </Link>
 
-        {/* NAV LINKS (Desktop) */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 items-center">
           {navItems.map((item) =>
             item.name === 'Order' ? (
@@ -67,58 +71,55 @@ const Navbar = () => {
           )}
         </nav>
 
-        {/* Mobile Hamburger */}
+        {/* Hamburger Icon */}
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen(true)}
           className="md:hidden focus:outline-none"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="white"
-            viewBox="0 0 24 24"
-          >
-            {open ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          <Menu className="w-6 h-6 text-white" />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Overlay */}
       {open && (
-      <div className="md:hidden px-4 pb-4 bg-[#0a1a3c] flex justify-center">
-        <nav className="flex flex-col items-center space-y-3">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      {/* Slide-in Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-3/4 max-w-sm bg-[#0a1a3c] shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+          open ? 'translate-x-0' : 'translate-x-full'
+        } md:hidden`}
+      >
+        {/* Close (X) Icon inside drawer */}
+        <div className="flex justify-end p-4">
+          <button onClick={() => setOpen(false)}>
+            <X className="text-white w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Mobile Nav Links */}
+        <div className="flex flex-col items-start gap-6 px-6">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `hover:text-gray-300 transition ${
+                `flex items-center gap-2 text-white text-lg hover:text-gray-300 transition ${
                   isActive ? 'text-gray-300 font-semibold' : ''
                 }`
               }
             >
+              {item.icon}
               {item.name}
             </NavLink>
           ))}
-        </nav>
+        </div>
       </div>
-    )}
-
     </header>
   );
 };

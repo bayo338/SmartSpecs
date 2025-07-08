@@ -22,7 +22,7 @@ export default function Hero() {
             <span className="text-[#c0c0c0]">See Smarter, Live Better</span>
           </h1>
           <p className="text-slate-200 text-lg md:text-xl mb-6">
-            Affordable AI Glasses for Every Nigerian
+            Affordable AI Glasses for Everyone
           </p>
           <a
             href="https://wa.me/+2348038650953"
