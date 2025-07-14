@@ -112,13 +112,24 @@ const Product = () => {
             </div>
           </div>
 
-          {/* Add to Cart Button */}
-          <button
-            onClick={handleAddToCart}
-            className="inline-block bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition text-sm md:text-base"
-          >
-            🛒 Add {quantity > 1 ? `${quantity} units` : 'to Cart'}
-          </button>
+
+          <div className="flex flex-col gap-4">
+             {/* Add to Cart Button */}
+            <button
+              onClick={handleAddToCart}
+              className="inline-block bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition text-sm md:text-base"
+            >
+               Add {quantity > 1 ? `${quantity} units` : 'to Cart'}
+            </button>
+
+            <button
+            onClick={() => navigate('/order')}
+            className="bg-[#0a1a3c] text-white px-4 py-2 rounded hover:bg-[#102457] transition"
+            >
+            🛒 Go to Cart
+            </button>
+          </div>
+         
 
           {/* Cart Message */}
           {cartMessage && (
