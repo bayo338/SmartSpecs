@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ShoppingCart, Trash2 } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Order = () => {
   const [cart, setCart] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -30,15 +31,6 @@ const Order = () => {
       0
     );
 
-  const whatsappMessage = encodeURIComponent(
-    `Hello, I would like to order:\n\n${cart
-      .map(
-        (item) =>
-          `• ${item.name} (₦${item.price}) x ${item.quantity}`
-      )
-      .join('\n')}\n\nTotal: ₦${getTotal().toLocaleString()}`
-  );
-
   if (cart.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white text-center px-4">
@@ -46,7 +38,7 @@ const Order = () => {
           <ShoppingCart size={40} className="text-blue-900 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-blue-900 mb-2">Your cart is empty</h2>
           <Link
-            to="/"
+            to="/#products"
             className="text-sm text-white bg-blue-900 px-5 py-2 rounded-xl hover:bg-blue-800 transition"
           >
             Go to Products
@@ -97,23 +89,23 @@ const Order = () => {
           ))}
         </div>
 
-        {/* Total and WhatsApp Order */}
+        {/* Total and Proceed to Payment */}
         <div className="mt-10 text-center">
           <p className="text-xl font-semibold text-blue-900 mb-4">
             Total: ₦{getTotal().toLocaleString()}
           </p>
-          <a
-            href={`https://wa.me/2348038650953?text=${whatsappMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <button
+            onClick={() => navigate('/payment')}
             className="inline-block bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition font-semibold"
           >
-            Order Now via WhatsApp
-          </a>
+            Order Now
+          </button>
+
           <div className="mt-4">
             <button
               onClick={clearCart}
-              className="text-sm text-red-500 underline hover:text-red-600"
+              className="text-sm text-red-500 hover:text-red-600"
             >
               Clear Cart
             </button>

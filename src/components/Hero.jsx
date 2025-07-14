@@ -25,9 +25,10 @@ export default function Hero() {
             Affordable AI Glasses for Everyone
           </p>
           <a
-            href="https://wa.me/+2348038650953"
+            // href="https://wa.me/+2348038650953"
+            href='#products'
             className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-full shadow-lg transition"
-            target="_blank"
+            // target="_blank"
             rel="noopener noreferrer"
           >
             {/* WhatsApp Icon */}

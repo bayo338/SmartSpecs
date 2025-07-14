@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Minus, Plus } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import product1 from '../assets/product1.jpg';
+import product2 from '../assets/product2.jpg';
 
 const products = {
   1: {
     name: 'SmartSpecs Classic',
-    image: '/assets/product1.jpg',
+    image: product1,
     price: '₦25,000',
     features: [
       'Hands-free calls',
@@ -18,7 +20,7 @@ const products = {
   },
   2: {
     name: 'SmartSpecs Pro',
-    image: '/assets/product2.jpg',
+    image: product2,
     price: '₦35,000',
     features: [
       'All Classic features included',
@@ -68,7 +70,7 @@ const Product = () => {
         className="flex items-center gap-2 text-sm text-blue-900 hover:text-blue-700 mb-6"
       >
         <ArrowLeft size={18} />
-        Back to Home
+        Back
       </button>
 
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -76,7 +78,7 @@ const Product = () => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-[350px] object-cover rounded-2xl shadow-md"
+          className="w-full h-[350px] object-fill rounded-2xl shadow-md"
         />
 
         {/* Product Info */}

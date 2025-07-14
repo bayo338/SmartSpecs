@@ -15,7 +15,7 @@ const Home = () => {
       <HowToOrder />
       <Testimonials />      
       <ContactSection />
-      <Footer />
+      {/* <Footer /> */}
       {/* Next sections go here */}
     </>
   );
