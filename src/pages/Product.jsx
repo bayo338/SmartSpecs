@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Minus, Plus } from 'lucide-react';
 import { useCart } from '../context/CartContext';

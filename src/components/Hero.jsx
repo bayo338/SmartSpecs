@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import smartGlassesUser from '../assets/smart-glasses-user.jpg'; // adjust path if needed
 
 export default function Hero() {

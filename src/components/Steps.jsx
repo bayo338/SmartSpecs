@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Phone, ShoppingCart, MessageCircle, Smile } from 'lucide-react';
 
 const steps = [

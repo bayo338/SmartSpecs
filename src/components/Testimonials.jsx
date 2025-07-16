@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import testifier1 from '../assets/testifier1.jpg';
