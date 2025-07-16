@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { ShoppingCart, Trash2 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+
 
 const Order = () => {
-  const [cart, setCart] = useState([]);
+  const { cart, removeFromCart, clearCart } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCart(storedCart);
-    console.log('Cart loaded:', storedCart);
-  }, [location]);
+  // useEffect(() => {
+  //   const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+  //   setCart(storedCart);
+  //   console.log('Cart loaded:', storedCart);
+  // }, [location]);
 
-  const removeFromCart = (id) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-  };
+  // const removeFromCart = (id) => {
+  //   const updatedCart = cart.filter((item) => item.id !== id);
+  //   setCart(updatedCart);
+  //   localStorage.setItem('cart', JSON.stringify(updatedCart));
+  // };
 
-  const clearCart = () => {
-    setCart([]);
-    localStorage.removeItem('cart');
-  };
+  // const clearCart = () => {
+  //   setCart([]);
+  //   localStorage.removeItem('cart');
+  // };
 
   const getTotal = () =>
     cart.reduce(

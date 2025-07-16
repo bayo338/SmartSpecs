@@ -63,7 +63,7 @@ const Product = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white px-4 py-12 md:py-20" style={{ fontFamily: 'Segoe UI, sans-serif' }}>
+    <section className="min-h-screen bg-white px-4 py-12 md:py-4" style={{ fontFamily: 'Segoe UI, sans-serif' }}>
       {/* Back Button */}
       <button
         onClick={() => navigate('/')}

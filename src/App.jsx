@@ -16,6 +16,7 @@ import OrderSuccess from './pages/OrderSuccess';
 import Payment from './pages/Payment';
 import Footer from './components/Footer';
 import { CartProvider } from "./context/CartContext";
+import ScrollToTop from './components/ScrollToTop'; 
 import { useLocation } from 'react-router-dom';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Router basename="/SmartSpecs">
         <Navbar />
         <ScrollToHashElement />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,9 +38,9 @@ function App() {
           <Route path="/submit-review" element={<SubmitReview />} />
           <Route path="/order-success" element={<OrderSuccess />} />
           <Route path="/payment" element={<Payment />} />
-        </Routes>
-       <Footer />
+        </Routes>       
         <FloatingWhatsApp />
+        <Footer />
       </Router>
     </CartProvider> 
   );

@@ -4,7 +4,6 @@ import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
 import HowToOrder from '../components/Steps';
 import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
 
 const Home = () => {
   return (
