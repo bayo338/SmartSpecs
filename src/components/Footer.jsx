@@ -14,7 +14,7 @@ const Footer = () => {
             <img
               src={logo} // Replace with your logo image path
               alt="SmartSpecs Logo"
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
           </Link>
           <p className="text-gray-300 text-sm">

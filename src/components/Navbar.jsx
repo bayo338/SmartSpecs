@@ -30,7 +30,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="SmartSpecs Logo"
-            className="h-10 w-auto max-w-[120px] object-contain"
+            className="h-12 w-auto max-w-[100px] object-contain"
           />
         </Link>
 

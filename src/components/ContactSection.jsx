@@ -37,8 +37,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-1">Call Us</h4>
-                <p className="text-gray-700 text-sm">+1629-279-4356;</p>
-                <p className="text-gray-700 text-sm">+2348029313755</p>                 
+                <p className="text-gray-700 text-sm">+2348029313755;</p>
+                <p className="text-gray-700 text-sm">+1629-279-4356</p>                 
                 <p className="text-gray-700 text-sm">Mon–Sat: 9am – 6pm</p>
               </div>
             </div>
